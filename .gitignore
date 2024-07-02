@@ -1,0 +1,6 @@
+.idea
+__pycache__
+media
+venv
+pretrained_models
+.env

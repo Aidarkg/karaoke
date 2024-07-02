@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать файл</title>
+</head>
+<body>
+    <a id="downloadLink" href="https://hitmus.kz/uploads/files/2022-05/begish_-_synba_(hitmuz.kz).mp3">Скачать файл</a>
+
+    <script>
+        document.getElementById('downloadLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            var link = document.createElement('a');
+            link.href = this.href;
+            link.download = 'begish_synba.mp3';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
