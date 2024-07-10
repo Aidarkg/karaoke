@@ -54,6 +54,7 @@ def video_extract(audio_path, video_path):
 
     cmd = [
         'ffmpeg',
+        '-y',
         '-i', video_path,
         '-i', audio_path,
         '-c:v', 'copy',
