@@ -5,7 +5,7 @@ import uuid
 import ffmpeg
 from decouple import config
 
-from youtube_download import download_video
+from services.youtube_download import download_video
 
 
 def generate_title():
@@ -23,7 +23,6 @@ def audio_extract(url=None, path=None):
 
     file_name = generate_title()
     file_name_ext = f"{file_name}.mp3"
-    print(video_path)
 
     audio_output_dir = config("AUDIO")
     os.makedirs(audio_output_dir, exist_ok=True)
@@ -38,6 +37,7 @@ def audio_extract(url=None, path=None):
     title_ext = {
         "title": file_name,
         "ext": ".mp3",
-        "path": audio_path
+        "path": audio_path,
+        "video_path": video_path
     }
     return title_ext
